@@ -1,0 +1,58 @@
+assignment7_description.txt
+Shakkhar Biswas, Rohan Chaudhry, Benjamin Wondwossen
+Group 10 
+MWF 9-10a 
+----------------------
+Our group has decided to closely replicate the popular tile-game (2048) for our assignment 7. We will implement this game in processing, and also implement a friendly GUI and possibly a high-scores list for the game. 
+
+A significant issue we faced in the assignment was integrating everyones code together in a seamless manner. Originally, the animation sprights were working perfectly, but as we added new lines of code, the sprights started jumbling together and stopped following their intended path. 
+This added about an hour of debugging that could have been used in other areas of the code. Furthermore, when the grid system was originally implemented, the tiles would move in a random, jumbled manor. 
+
+The game functions excusively by user input. To move the tiles a certain direction, the user must press one of the four arrow keys.
+The rules are simple: only two same-numbered tiles can be combined to form a new number of greater value. 
+Play continues until there are no possible moves left, the grid is filled up, or the user chooses to quit the game from the pause menu. 
+The player choosing to pause the game can be done by pressing the 'p' key or by clicking the pause button on the bottom right of the screen. 
+In the pause menu, the choices to continue or quit are made by mousepress.  
+The player cannot techincally win; this game is similar to tetris in the sense that the high score can be ever-increasing. 
+
+SUMMARY OF INPUTS: 
+4 arrow key inputs 
+2 keyboard inputs: p to pause, r to reset 
+3 mouse inputs: to pause, continue, and quit 
+scores.txt text input: to update the high score list
+
+THREE RULES: 
+- two squares combine if they are of same value; otherwise, they do not combine
+- all squares move in the same user-inputted direction 
+- every turn, a new square tile will appear, of value 2 or 4
+
+GUI depiction of player score is on the right part of the screen. 
+
+There is a GAME OVER screen present if the player loses. This appears when there are no more possible moves left to make. 
+
+We implemented different classes to separate objects. These include a class for the tiles, grid, and 2048 animated sprite. 
+The animated 2048 sprite was created from scratch. 
+
+The coordinates of the grid were supposed to make them follow the gridline, so this required further debugging as well.
+
+We implemented the arrow keys as controls for moving up, down, left or right. 
+The interface will indicate the player’s current score. A pause button is also available to exit the game immediately.
+
+The grid function draws the boundaries and lines of the grid. 
+The moveTiles function moves the tiles based on the arrow keys, only merging tiles if they have the same number.The function checks if they key and new position of the tile is valid and allows the 
+tile to be moved if the neighboring tiles have no value.
+The changeCell function updates the position of a cell when the cell is moving. Finally, the drawTile function draws the tiles based on its numeric value.
+
+The high score functions by opening up the accompanying scores.txt file and uploads the previous high scores into a list. The code then traverses the list, comparing the users current score to every score on the list. If the score is bigger than the lowest score, it switches the new score with the lowest score. Finally, the code updates the scores text file with the list of new highest scores.
+
+Shakkhar worked on implementing the interface and the tile-grid structure.  He also created the extra credit sprites used in the animation, such as the tiles and the background image. He also implemented the extra credit animation artifact, 
+which utilizes the saveframe() function that takes shots of the game. He also implemented the GUI interface for scoring and other important player information.
+
+Rohan worked implementing the functionality of the arrow keys and the buttons. He is responsible for implementing the extra credit pause screen and saveFrame() functionality. 
+When the player presses the pause button, player inputs are blocked and all in-game movements are stopped. 
+The pause screen has a "Continue" and a "Quit" button to continue the game and exit the game respectively.
+
+Benjamin was responsible for writing the supporting txt description and readme files. He also assisted in the implementation of the logic structure and game conditions. Finally,
+he also implemented the hiscores list.
+
+The entire group worked to help each other master GUI, functions, and applying interactivity in a cohesive simulation.
